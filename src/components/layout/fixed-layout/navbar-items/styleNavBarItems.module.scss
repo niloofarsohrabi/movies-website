@@ -1,0 +1,31 @@
+@import '../../../../assets//css/_variable/variable';
+ul{
+  list-style-type: none;
+  z-index: 100;
+  padding: 0;
+  margin:0
+  
+}
+
+.listOfItem{
+  position: absolute;
+  background-color: white;
+  border-radius: 5px;  
+  top:50px;
+}
+ul li{
+  color :black;
+  padding-top: 10px ;
+  padding-bottom: 10px;
+  padding-left:30px ;
+  padding-right: 60px;
+  font-size: 13px;   
+}
+
+li:hover{
+  cursor: pointer;
+  background-color:$light-blue;
+  border-radius: 5px;
+  
+}
+
