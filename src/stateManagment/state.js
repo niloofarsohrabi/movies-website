@@ -1,5 +1,5 @@
 const intialState={
-    ClickSearchIconOnHeader:null
+    ClickSearchIconOnHeader:false
 }
 
 export default intialState;

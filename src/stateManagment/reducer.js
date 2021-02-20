@@ -5,12 +5,12 @@ export const rootReducer = (state = intialState, action) => {
         case "CLICK_ON_SEARCH":
             return {
                 ...state,
-                ClickSearchIconOnHeader: action.payload
+                ClickSearchIconOnHeader: true
             }
         case "CLICK_ON_CLOSE_ICON":
             return {
                 ...state,
-                ClickSearchIconOnHeader: action.payload
+                ClickSearchIconOnHeader: false
             }
         default:
             return {

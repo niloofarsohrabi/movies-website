@@ -1,0 +1,17 @@
+.inputSearch input{
+    width:100%;
+    height: 50px;
+    border: 0;
+    
+}
+input:focus {
+    outline: 0px;
+}
+input::placeholder{
+    padding-left: 50px;
+    font-style: italic;
+    font-size:17px
+}
+input{
+    transition:all 0.3s;
+}
