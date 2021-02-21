@@ -4,13 +4,13 @@
     background-color: $main-color;
    height:300px;
 }
-img{
+.logoImage{
     width:45%;
     position: relative;
     left:55%;
     
 }
-button{
+.btnFooter{
     position: relative;
     bottom:43px;
     left: 14%;
@@ -21,7 +21,7 @@ button{
     font-weight: bold;
     padding: 10px 20px;
 }
-button:hover{
+.btnFooter:hover{
     background-color: $light-blue;
     color: white;
 }

@@ -1,0 +1,40 @@
+.totalSlider{
+    position: relative;
+}
+
+.imageSlider{
+   width: 100%;
+}
+.title{
+    color: white;
+    position: absolute;
+    left:60px;
+    top:30%;
+}
+.subTitleSlider{
+    color: white;
+    position: absolute;
+    left: 60px;
+    bottom:50%
+}
+.inputSlider{
+    position: absolute;
+    bottom:35%;
+    left:60px;
+    width: 80%;
+    height: 50px;
+    border: none;
+    border-radius: 30px;
+}
+.btnSearchSlider{
+    border: none;
+    position: absolute;
+    left: 80%;
+    bottom:35%;
+    height: 50px;
+    padding: 10px 25px;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(90deg, rgba(163,241,135,1) 0%, rgba(2,207,223,1) 64%);
+}

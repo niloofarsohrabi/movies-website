@@ -10,7 +10,7 @@ export const Footer = () => {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-lg-4">
-                        <img src={logo} />
+                        <img className={styleFooter.logoImage} src={logo} />
                     </div>
                     {
                         footerItem.map((item) => {
@@ -27,7 +27,7 @@ export const Footer = () => {
                     }
                 </div>
                 <div className="row">
-                    <button>JOIN THE COMMUNITY</button>
+                    <button className={styleFooter.btnFooter}>JOIN THE COMMUNITY</button>
                 </div>
             </div>
         </div>
