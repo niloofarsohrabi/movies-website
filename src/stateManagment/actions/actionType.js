@@ -1,0 +1,4 @@
+export const actionType={
+    CLICK_ON_SEARCH:"CLICK_ON_SEARCH",
+    CLICK_ON_CLOSE_ICON:"CLICK_ON_CLOSE_ICON"
+}
