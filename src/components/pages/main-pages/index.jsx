@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { Footer } from '../../layout/fixed-layout/footer'
 import { Header } from '../../layout/fixed-layout/header'
 import { NavBar } from '../../layout/fixed-layout/navbar'
 import styleMainPage from './styleMainPage.module.scss'
@@ -18,6 +19,10 @@ export const MainPage = () => {
                 </div>
                 : null
             }
+            ..
+            ...
+            
+             <Footer/> 
         </>
     )
 }

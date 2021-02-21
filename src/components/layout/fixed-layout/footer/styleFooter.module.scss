@@ -1,0 +1,31 @@
+@import '../../../../assets/css/_variable/variable';
+
+.totalStyle{
+    background-color: $main-color;
+   height:300px;
+}
+img{
+    width:45%;
+    position: relative;
+    left:55%;
+    
+}
+button{
+    position: relative;
+    bottom:43px;
+    left: 14%;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    color:$light-blue;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+button:hover{
+    background-color: $light-blue;
+    color: white;
+}
+.footerItem{
+    margin-top: 80px;
+    color: white;
+}
