@@ -18,7 +18,7 @@ export const MainPage = () => {
     //-------------------------------------------fetch data with thunk
 
     const isLoadingState = useSelector(state => state.listOfMovieState.isLoading);
-    const resiveDataSate = useSelector(state => state.listOfMovieState.getAllMovie.data);
+    const resiveDataState = useSelector(state => state.listOfMovieState.getAllMovie.data);
 
     const dispatch = useDispatch();
     useEffect(async () => {
@@ -29,7 +29,7 @@ export const MainPage = () => {
     return (
 
         <>
-{console.log(isLoadingState)}
+
             <Header onSearchClick={() => handleSearchClick()}>
                 <NavBar />
             </Header>
@@ -41,19 +41,18 @@ export const MainPage = () => {
             }
             <Slider />
             {/* ------------------------------------------------------- header and slider */}
-           
-            {
-                isLoadingState ?  <Loading/>:
-                    resiveDataSate &&
 
-                    resiveDataSate.map((item) => {
+            {
+                isLoadingState ? <Loading /> :
+                    resiveDataState &&
+                    resiveDataState.map((item) => {
                         return (
                             <div>{item.title}</div>
                         )
                     })
-                    
+
             }
-           
+
             {/* ---------------------------------------------------------fetch data */}
             <Footer />
         </>
