@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { Footer } from '../../layout/fixed-layout/footer'
 import { Header } from '../../layout/fixed-layout/header'
 import { NavBar } from '../../layout/fixed-layout/navbar'
 import { Slider } from '../../layout/slider'
 import styleMainPage from './styleMainPage.module.scss'
+
 
 export const MainPage = () => {
 
@@ -11,6 +12,8 @@ export const MainPage = () => {
     const handleSearchClick = () => {
        setStateOnClickSerach(prevState=>!prevState);
     }
+    
+
     return (
         <>
             <Header onSearchClick={() => handleSearchClick()}>
@@ -23,6 +26,7 @@ export const MainPage = () => {
                 </div>
                 : null
             } 
+          
             <Slider />
             <Footer />
         </>
