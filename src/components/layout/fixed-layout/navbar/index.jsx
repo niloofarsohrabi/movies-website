@@ -8,7 +8,7 @@ export const NavBar = () => {
             {
                 menuItem.map((item, index) => {
                     return (
-                        <div className={styleNavBar.mainMenuList}>
+                        <div key ={item.id} className={styleNavBar.mainMenuList}>
                             <NavBarItems navbarData={item} />
                         </div>
 

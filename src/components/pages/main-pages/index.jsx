@@ -19,7 +19,6 @@ export const MainPage = () => {
 
     const isLoadingState = useSelector(state => state.listOfMovieState.isLoading);
     const resiveDataState = useSelector(state => state.listOfMovieState.getAllMovie.data);
-
     const dispatch = useDispatch();
     useEffect(async () => {
         await dispatch(await fetchMovieAction(dispatch));
@@ -42,7 +41,7 @@ export const MainPage = () => {
             <Slider />
             {/* ------------------------------------------------------- header and slider */}
 
-            {
+            {/* {
                 isLoadingState ? <Loading /> :
                     resiveDataState &&
                     resiveDataState.map((item) => {
@@ -51,7 +50,7 @@ export const MainPage = () => {
                         )
                     })
 
-            }
+            } */}
 
             {/* ---------------------------------------------------------fetch data */}
             <Footer />

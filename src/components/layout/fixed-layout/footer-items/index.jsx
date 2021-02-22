@@ -11,7 +11,7 @@ export const FooterItem = ({ footerData }) => {
 
             {footerData.subTitleOfFooter.map((item) => {
                 return (
-                    <div className={styleFooterItem.subTitle}>
+                    <div key={item.id} className={styleFooterItem.subTitle}>
                         {item}
                     </div>
                 )

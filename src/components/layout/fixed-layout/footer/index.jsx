@@ -15,8 +15,8 @@ export const Footer = () => {
                     {
                         footerItem.map((item) => {
                             return (
-                                <div className="col-lg-2">
-                                    <div className={styleFooter.footerItem}>
+                                <div  key={item.id} className="col-lg-2">
+                                    <div   className={styleFooter.footerItem}>
                                     <FooterItem footerData={item} />
                                     </div>
                                    

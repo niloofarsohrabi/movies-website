@@ -24,9 +24,9 @@ export const NavBarItems = ({ navbarData }) => {
                         <div className={styleNavBarItems.listOfItem}
                             onMouseEnter={() => whichItemClick(navbarData.id)}
                             onMouseLeave={() => { handleMouseLeave() }}>
-                            {navbarData.subTitleOfMenu.map((item, key) => {
+                            {navbarData.subTitleOfMenu.map((item) => {
                                 return (
-                                    <ul>
+                                    <ul key={item.id}>
                                         <li>{item}</li>
                                     </ul>
                                 )
