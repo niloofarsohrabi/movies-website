@@ -6,8 +6,14 @@ const fetchListOfMovieReducer = (state = intialState, action) => {
         case actionType.START_FETCH_LIST_OF_MOVIE:
             return{
                 ...state,
-                getAllMovie:action.payload
+                isLoading:true
             }
+         case actionType.FINISH_FETCH_LIST_OF_MOVIE:
+             return{
+                 ...state,
+                 getAllMovie:action.payload,
+                 isLoading:false
+             }   
 
         default:
            return{

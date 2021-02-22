@@ -1,15 +1,28 @@
-import {actionType} from './actionType'
+import { actionType } from './actionType'
+import mainUrl from '../../url/main-url'
 
+export const startFetchListOfMovieAction = () => {
+    return {
+        type: actionType.START_FETCH_LIST_OF_MOVIE,
+       
+    }
+}
 
-// export const startFetchListOfMovie = (data) => {
-//     return {
-//         type:actionType.START_FETCH_LIST_OF_MOVIE,
-//         payload:data
-//     }  
-// }
-// export const fetchaction= async(dispatch)=>{
-//     const movieurl= await fetch('https://moviesapi.ir/api/v1/movies?page={page}');
-//     let data= await movieurl.json();
-//     return dispatch(startFetchListOfMovie(data))
+export const finishFetchListOfMovieAction = (movieData) => {
+    return {
+        type: actionType.FINISH_FETCH_LIST_OF_MOVIE,
+        payload: movieData
+    }
+}
 
-// }
+export const fetchMovieAction = async (dispatch) => {
+    try{
+
+        dispatch(startFetchListOfMovieAction());
+        const urlGetAllMovie = await fetch(`${mainUrl.FETCH_URL}/movies`);
+        let result= await urlGetAllMovie.json();
+        return dispatch(finishFetchListOfMovieAction(result));
+    }catch(e){
+
+    }
+}
