@@ -10,20 +10,20 @@ export const NavBarItems = ({ navbarData }) => {
             setResiveData(prevState => !prevState);
         }
     }
-    const handleMouseLeave = () => {
-        setResiveData(false);
-    }
+   // const handleMouseLeave = () => {
+       // setResiveData(false);
+    //}
     return (
         <>
             <div  onMouseEnter={() => whichItemClick(navbarData.id)}
-                   onMouseLeave={() => { handleMouseLeave() }}>
+                   onMouseLeave={() =>  whichItemClick(navbarData.id) }>
                 {navbarData.mainTitleOfMenu}
             </div>
             <div>
                 {resiveData ?
                         <div className={styleNavBarItems.listOfItem}
                             onMouseEnter={() => whichItemClick(navbarData.id)}
-                            onMouseLeave={() => { handleMouseLeave() }}>
+                            onMouseLeave={() => whichItemClick(navbarData.id)}>
                             {navbarData.subTitleOfMenu.map((item) => {
                                 return (
                                     <ul key={item.id}>

@@ -1,3 +1,4 @@
+@import'../../../assets/css/_variable/variable';
 .totalSlider{
     position: relative;
 }
@@ -9,32 +10,33 @@
     color: white;
     position: absolute;
     left:60px;
-    top:30%;
+    top:200px;
 }
 .subTitleSlider{
     color: white;
     position: absolute;
     left: 60px;
-    bottom:50%
+    bottom: 320px;
 }
 .inputSlider{
     position: absolute;
-    bottom:35%;
+    bottom:230px;
     left:60px;
     width: 80%;
     height: 50px;
     border: none;
     border-radius: 30px;
+    text-indent: 20px;
 }
 .btnSearchSlider{
     border: none;
     position: absolute;
-    left: 80%;
-    bottom:35%;
+    left:1040px;
+    bottom:230px;
     height: 50px;
     padding: 10px 25px;
     border-radius: 30px;
     color: white;
     font-weight: bold;
-    background: linear-gradient(90deg, rgba(163,241,135,1) 0%, rgba(2,207,223,1) 64%);
+    background:$liner-color
 }

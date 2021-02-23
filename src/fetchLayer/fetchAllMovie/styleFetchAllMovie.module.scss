@@ -1,0 +1,101 @@
+@import '../../assets/css/_variable/variable';
+
+.titlePopular h2{
+    margin-top: 50px;
+    margin-left:30px;
+    
+}
+.line{
+    width: 270px;
+    height: 10px;
+    border-radius: 30px;
+    margin-left:30px;
+    background: $liner-color
+
+}
+
+.loading{
+    margin-left: 600px;
+    margin-top:50px
+}
+.poster {
+    width: 300px;
+    height: 350px;
+    margin-left:25px;
+    margin-top:30px;
+    transition-property: transform;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
+    transition-delay: 0s;
+    border: 2px solid $light-blue;
+    border-radius: 5px;
+    box-shadow: -3px -1px 12px 0px $light-blue;
+   // padding-left: 20px
+}
+.poster:hover{
+    transform: scale(0.99);
+ 
+}
+.styleDetail{
+    display: inline-block;
+    margin-bottom: 30px;
+    position: relative;
+   
+}
+
+.titleMovie{
+    margin-left:25px;
+    margin-top:10px;
+    font-weight: bold;
+}
+.yearOfMovie{
+    margin-left:25px;
+}
+.countryOfMovie{
+    margin-left:25px;
+}
+.box{
+    width: 50px;
+    height:150px;
+    background: $liner-color;
+    position: absolute;
+    z-index: 98;
+    left: 273px;
+    top: 32px;
+    color:white;
+    border-bottom-left-radius: 5px;
+    opacity: 0;
+    animation-name: animationShowBox;
+    animation-duration: 0.7s;
+    animation-delay: 0.2s;
+    animation-fill-mode: both;
+
+}
+
+.playIcon{
+    margin-left: 12px;
+}
+.infoIcon{
+    margin-left: 12px;
+}
+.playIcon:hover,.infoIcon:hover{
+    cursor: pointer;
+    transform: scale(1.3);
+    transition-property: transform;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
+    transition-delay: 0s;
+}
+
+@keyframes animationShowBox{
+    from{
+        left: 273px;
+        top: 0px;
+        opacity: 0;
+    }
+    to{
+        top:32px;
+        left:273px;
+        opacity: 1;
+    }
+}

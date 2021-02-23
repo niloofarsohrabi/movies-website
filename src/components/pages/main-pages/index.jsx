@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { fetchMovieAction } from '../../../stateManagment/actions/fetchListOfMovieAction'
+import React,{useState} from 'react'
+import { FetchAllMovie } from '../../../fetchLayer/fetchAllMovie'
+
 import { Footer } from '../../layout/fixed-layout/footer'
 import { Header } from '../../layout/fixed-layout/header'
 import { NavBar } from '../../layout/fixed-layout/navbar'
 import { Slider } from '../../layout/slider'
-import { Loading } from '../../layout/loading'
+
 import styleMainPage from './styleMainPage.module.scss'
 
 
@@ -16,13 +16,6 @@ export const MainPage = () => {
         setStateOnClickSerach(prevState => !prevState);
     }
     //-------------------------------------------fetch data with thunk
-
-    const isLoadingState = useSelector(state => state.listOfMovieState.isLoading);
-    const resiveDataState = useSelector(state => state.listOfMovieState.getAllMovie.data);
-    const dispatch = useDispatch();
-    useEffect(async () => {
-        await dispatch(await fetchMovieAction(dispatch));
-    }, [])
 
 
     return (
@@ -40,17 +33,7 @@ export const MainPage = () => {
             }
             <Slider />
             {/* ------------------------------------------------------- header and slider */}
-
-            {/* {
-                isLoadingState ? <Loading /> :
-                    resiveDataState &&
-                    resiveDataState.map((item) => {
-                        return (
-                            <div>{item.title}</div>
-                        )
-                    })
-
-            } */}
+                <FetchAllMovie/>
 
             {/* ---------------------------------------------------------fetch data */}
             <Footer />
