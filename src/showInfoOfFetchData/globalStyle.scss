@@ -1,0 +1,32 @@
+@import '../assets/css/_variable/variable';
+
+.poster{
+    width:170px;
+    height: 220px;
+    margin-top: 20px;
+    border: 2px solid $light-blue;
+    border-radius: 5px;
+    box-shadow: 1px 1px 9px 0px $light-blue;
+    transition-property: transform;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
+    transition-delay: 0s;
+}
+.poster:hover{
+   transform: scale(0.99);  
+}
+  
+.imageItem {
+   width:220px !important;
+ } 
+
+.titleMovie{
+     margin-top:10px;
+     font-weight: bold;
+ }
+
+ .yearOfMovie,.countryOfMovie{
+   color: rgba(128, 128, 128, 0.904);
+ }
+
+ 

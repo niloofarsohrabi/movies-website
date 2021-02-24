@@ -13,15 +13,16 @@ input::placeholder{
     font-style: italic;
     font-size:17px
 }
-.titlePopular{
+.titlePopular,.titleFreeWatch{
     margin-left:30px;
     margin-top:30px;
 
 }
 
 .line{
-    width: 170px;
+    width: 169px;
     height: 10px;
     border-radius: 30px;
     background: $liner-color;
+    margin-right: 3px;
 }

@@ -1,0 +1,43 @@
+@import '../../assets/css/_variable/variable';
+ .box{
+    width: 50px;
+    height:130px;
+     background: $main-color;
+     position: absolute;
+     z-index:98;
+     top: 22px;
+     left: 118px;
+    border-bottom-left-radius: 5px;
+    opacity: 0;
+    animation-name: animationShowBox;
+    animation-duration: 0.7s;
+     animation-delay: 0.2s;
+    animation-fill-mode: both;
+}
+
+.playIcon,.infoIcon{
+    color: white;
+    margin-left: 12px;
+}
+
+.playIcon:hover,.infoIcon:hover{
+    cursor: pointer;
+    transform: scale(1.3);
+    transition-property: transform;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
+    transition-delay: 0s;
+}
+
+@keyframes animationShowBox{
+    from{
+        top: 0px;
+        left: 118px;
+        opacity: 0;
+    }
+    to{
+        top: 22px;
+        left: 118px;
+        opacity: 1;
+    }
+}
