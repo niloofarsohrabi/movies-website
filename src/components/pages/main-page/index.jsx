@@ -5,7 +5,8 @@ import { NavBar } from '../../layout/fixed-layout/navbar'
 import { Slider } from '../../layout/slider'
 import ShowShortInfoOfPopularSlider from '../../../showInfoOfFetchData/showShortInfoOfPopularSlider'
 import styleMainPage from './styleMainPage.module.scss'
-import  ShowShortInfoOfFreeWatchSlider  from '../../../showInfoOfFetchData/showShortInfoOfFreeWatchSlider'
+import ShowShortInfoOfFreeWatchSlider from '../../../showInfoOfFetchData/showShortInfoOfFreeWatchSlider'
+import { Banner } from '../../banner'
 
 
 export const MainPage = () => {
@@ -40,9 +41,11 @@ export const MainPage = () => {
             <div className={styleMainPage.titleFreeWatch}>
                 <h4>Free To Watch</h4>
                 <div className={styleMainPage.line}></div>
-                 <ShowShortInfoOfFreeWatchSlider/> 
+                <ShowShortInfoOfFreeWatchSlider />
             </div>
-
+            <div>
+                <Banner/>
+            </div>
 
 
 
