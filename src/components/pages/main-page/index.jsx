@@ -1,11 +1,9 @@
-import React,{useState} from 'react'
-import { FetchAllMovie } from '../../../fetchLayer/fetchAllMovie'
-
+import React, { useState } from 'react'
 import { Footer } from '../../layout/fixed-layout/footer'
 import { Header } from '../../layout/fixed-layout/header'
 import { NavBar } from '../../layout/fixed-layout/navbar'
 import { Slider } from '../../layout/slider'
-
+import ShowShortInfoOfPopularSlider from '../../../showInfoOfFetchData/showShortInfoOfPopularSlider'
 import styleMainPage from './styleMainPage.module.scss'
 
 
@@ -33,7 +31,17 @@ export const MainPage = () => {
             }
             <Slider />
             {/* ------------------------------------------------------- header and slider */}
-                <FetchAllMovie/>
+            <div className={styleMainPage.titlePopular}>
+                <h4>What's Popular</h4>
+                <div className={styleMainPage.line}></div>
+                <ShowShortInfoOfPopularSlider />
+            </div>
+
+
+
+
+
+
 
             {/* ---------------------------------------------------------fetch data */}
             <Footer />

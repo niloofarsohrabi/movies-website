@@ -9,18 +9,19 @@
 .title{
     color: white;
     position: absolute;
+    bottom:300px;
     left:60px;
-    top:200px;
+  
 }
 .subTitleSlider{
     color: white;
     position: absolute;
     left: 60px;
-    bottom: 320px;
+    bottom: 240px;
 }
 .inputSlider{
     position: absolute;
-    bottom:230px;
+    bottom:150px;
     left:60px;
     width: 80%;
     height: 50px;
@@ -31,8 +32,8 @@
 .btnSearchSlider{
     border: none;
     position: absolute;
-    left:1040px;
-    bottom:230px;
+    left:1060px;
+    bottom:150px;
     height: 50px;
     padding: 10px 25px;
     border-radius: 30px;

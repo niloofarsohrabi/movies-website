@@ -1,5 +1,5 @@
 @import '../../../../assets//css/_variable/variable';
-ul{
+.listOfItem ul{
   list-style-type: none;
   z-index: 100;
   padding: 0;
@@ -12,8 +12,9 @@ ul{
   background-color: white;
   border-radius: 5px;  
   top:50px;
+  padding: 0px 0px;
 }
-ul li{
+.listOfItem ul li{
   color :black;
   padding-top: 10px ;
   padding-bottom: 10px;
@@ -22,10 +23,10 @@ ul li{
   font-size: 13px;   
 }
 
-li:hover{
+
+.listOfItem li:hover{
   cursor: pointer;
   background-color:$light-blue;
   border-radius: 5px;
-  
 }
 
