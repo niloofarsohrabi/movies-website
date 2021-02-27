@@ -11,6 +11,8 @@ export const Footer = () => {
                 <div className="row">
                     <div className="col-lg-4">
                         <img className={styleFooter.logoImage} src={logo} />
+                        <button className={styleFooter.btnFooter}>JOIN THE COMMUNITY</button>
+                
                     </div>
                     {
                         footerItem.map((item) => {
@@ -26,9 +28,8 @@ export const Footer = () => {
                         })
                     }
                 </div>
-                <div className="row">
-                    <button className={styleFooter.btnFooter}>JOIN THE COMMUNITY</button>
-                </div>
+               
+                  
             </div>
         </div>
       </>
