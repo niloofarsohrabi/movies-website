@@ -22,7 +22,7 @@
 .inputSlider{
     position: absolute;
     bottom:150px;
-    left:60px;
+    left:50px;
     width: 80%;
     height: 50px;
     border: none;
@@ -32,7 +32,7 @@
 .btnSearchSlider{
     border: none;
     position: absolute;
-    left:1060px;
+    right:calc(100% - 85%);
     bottom:150px;
     height: 50px;
     padding: 10px 25px;
@@ -40,4 +40,8 @@
     color: white;
     font-weight: bold;
     background:$liner-color
+}
+.searchBox{
+    position: relative;
+    
 }
