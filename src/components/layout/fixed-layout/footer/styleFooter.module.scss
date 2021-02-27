@@ -1,18 +1,19 @@
 @import '../../../../assets/css/_variable/variable';
 
 .totalStyle{
-    background-color: $main-color;
+   background-color: $main-color;
    height:300px;
 }
 .logoImage{
-    width:45%;
-    position: relative;
-    left:55%;
-    
+    width:100%;
+   // position: relative;
+    //left:55%;
+    display: flex;
+    justify-content: center;
 }
 .btnFooter{
-    position: relative;
-    top:50%;
+   // position: relative;
+    //top:50%;
     
     border: none;
     border-radius: 5px;
@@ -28,4 +29,8 @@
 .footerItem{
     margin-top: 80px;
     color: white;
+}
+.test{
+    width: 60%;
+    margin-left: calc(100% - 60%);
 }

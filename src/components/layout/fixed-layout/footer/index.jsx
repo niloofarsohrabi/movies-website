@@ -10,28 +10,31 @@ export const Footer = () => {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-lg-4">
-                        <img className={styleFooter.logoImage} src={logo} />
-                        <button className={styleFooter.btnFooter}>JOIN THE COMMUNITY</button>
-                
+                        <div className={styleFooter.test}>
+                            <img className={styleFooter.logoImage} src={logo} />
+                            <button className={styleFooter.btnFooter}>JOIN THE COMMUNITY</button>
+                        </div>
+
+
                     </div>
                     {
                         footerItem.map((item) => {
                             return (
-                                <div  key={item.id} className="col-lg-2">
-                                    <div   className={styleFooter.footerItem}>
-                                    <FooterItem footerData={item} />
+                                <div key={item.id} className="col-lg-2">
+                                    <div className={styleFooter.footerItem}>
+                                        <FooterItem footerData={item} />
                                     </div>
-                                   
+
                                 </div>
 
                             )
                         })
                     }
                 </div>
-               
-                  
+
+
             </div>
         </div>
-      </>
+        </>
     )
 }
