@@ -40,12 +40,12 @@ const ShowShortInfoOfFreeWatchSlider = () => {
         <Carousel
             ssr
             partialVisbile
-            responsive={responsive} >
+            responsive={responsive} itemClass="image-item">
             {
                 resiveDataState ?
                     resiveDataState.map((item) => {
                         return (
-                            <div className="total">
+                            
                                 <div key={item.id} >
                                     {mouseOverOnImage == item.id ?
                                         <div className="box" >
@@ -78,7 +78,7 @@ const ShowShortInfoOfFreeWatchSlider = () => {
                                     <div className="countryOfMovie">
                                         {item.country}</div>
                                 </div>
-                            </div>
+                           
                         )
                     }) : <Loading />
             }

@@ -42,12 +42,11 @@ const ShowShortInfoOfPopularSlider = () => {
         <Carousel
             ssr
             partialVisbile
-            responsive={responsive}>
+            responsive={responsive} itemClass="image-item">
             {
                 resiveDataState ?
                     resiveDataState.map((item) => {
                         return (
-                            <div className="total">
 
                                 <div key={item.id}>
                                     {
@@ -84,7 +83,7 @@ const ShowShortInfoOfPopularSlider = () => {
                                 
                                    
                                 </div>
-                            </div>
+                           
                         )
                     }) : <Loading />
             }
