@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {RouterHandler} from './router/index'
-import { MainPage } from './components/pages/main-page'
 import { Provider } from 'react-redux'
 import { store } from './stateManagment/store/store'
 import reportWebVitals from './reportWebVitals';
@@ -12,9 +11,8 @@ import './index.css';
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <MainPage />
+      <RouterHandler />
     </Provider>
-
   </React.StrictMode>,
   document.getElementById('root')
 );

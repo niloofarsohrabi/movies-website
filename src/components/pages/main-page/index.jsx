@@ -1,7 +1,4 @@
 import React, { useState } from 'react'
-import { Footer } from '../../layout/fixed-layout/footer'
-import { Header } from '../../layout/fixed-layout/header'
-import { NavBar } from '../../layout/fixed-layout/navbar'
 import { Slider } from '../../layout/slider'
 import ShowShortInfoOfPopularSlider from '../../../showInfoOfFetchData/showShortInfoOfPopularSlider'
 import styleMainPage from './styleMainPage.module.scss'
@@ -10,27 +7,11 @@ import { Banner } from '../../banner'
 
 
 export const MainPage = () => {
-    //----------------------------------------- btn search click
-    const [stateOnClickSerach, setStateOnClickSerach] = useState();
-    const handleSearchClick = () => {
-        setStateOnClickSerach(prevState => !prevState);
-    }
-    //-------------------------------------------fetch data with thunk
-
-
+   
     return (
 
         <>
-
-            <Header onSearchClick={() => handleSearchClick()}>
-                <NavBar />
-            </Header>
-            {stateOnClickSerach ?
-                <div className={styleMainPage.inputSearch}>
-                    <input placeholder="Search for a movie, tv show, person..." />
-                </div>
-                : null
-            }
+          
             <Slider />
             {/* ------------------------------------------------------- header and slider */}
             <div className={styleMainPage.titlePopular}>
@@ -47,11 +28,8 @@ export const MainPage = () => {
                 <Banner/>
             </div>
 
-
-
-
             {/* ---------------------------------------------------------fetch data */}
-            <Footer />
+           
         </>
     )
 }

@@ -10,11 +10,9 @@ export const Footer = () => {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-lg-4">
-                        <div className={styleFooter.test}>
-                            <img className={styleFooter.logoImage} src={logo} />
-                            <button className={styleFooter.btnFooter}>JOIN THE COMMUNITY</button>
-                        </div>
-
+                
+                        <img className={styleFooter.logoImage} src={logo} />
+                        <button className={styleFooter.btnFooter}>JOIN THE COMMUNITY</button>
 
                     </div>
                     {

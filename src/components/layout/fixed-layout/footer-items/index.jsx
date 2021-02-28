@@ -9,9 +9,9 @@ export const FooterItem = ({ footerData }) => {
                 
             </div>
 
-            {footerData.subTitleOfFooter.map((item) => {
+            {footerData.subTitleOfFooter.map((item,index) => {
                 return (
-                    <div key={item.id} className={styleFooterItem.subTitle}>
+                    <div key={index} className={styleFooterItem.subTitle}>
                         {item}
                     </div>
                 )

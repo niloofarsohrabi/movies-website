@@ -5,16 +5,24 @@
    height:300px;
 }
 .logoImage{
-    width:100%;
+    width:230px;
+    height: 214px;
    // position: relative;
     //left:55%;
-    display: flex;
-    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+
 }
+
 .btnFooter{
-   // position: relative;
+    position: absolute;
+    display: block;
+    right: 0px;
+    top:200px;
     //top:50%;
-    
+   // display: flex;
+   // justify-content: center;
     border: none;
     border-radius: 5px;
     background-color: white;
@@ -29,8 +37,4 @@
 .footerItem{
     margin-top: 80px;
     color: white;
-}
-.test{
-    width: 60%;
-    margin-left: calc(100% - 60%);
 }
