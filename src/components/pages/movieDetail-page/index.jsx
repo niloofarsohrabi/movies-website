@@ -113,7 +113,7 @@ export const MovieDetailPage = () => {
                     </div>
                 </div>
             </div>
-           <MovieDetailBottomPart/>
+           {/* <MovieDetailBottomPart/>                     */}
         </div>
     )
 }

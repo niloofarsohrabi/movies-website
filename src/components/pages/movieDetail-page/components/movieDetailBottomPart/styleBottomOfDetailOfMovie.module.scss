@@ -5,27 +5,27 @@
 }
 .title{
     font-weight: bold;
-    font-size:20px;
+    font-size:25px;
     margin-top:20px;
 }
-.boxAccount img{
-    width: 200px;
-    height: 175px;
-
+.starsTitle,.castTitle,.metascore{
+    font-weight: bold;
+    color:gray;
+    font-size:18px;
+    margin-top:10px;
 }
+.test{
+   
+    font-size:20px
+}
+
 .boxAccount {
     display: inline-block;
-    border: 3px solid #f3f3f3;
-    box-shadow: -3px -1px 5px 1px #004d90;
-    border-radius: 5px;
-    margin-right: 20px;
-    margin-top:30px;
+    margin-top:10px;
 }
 .boxAccount div{
-    text-align: center;
     font-weight: bold;
-    padding: 15px 15px;
-   
+   padding-right: 15px;
 }
 .socialMedia{
     display: flex;

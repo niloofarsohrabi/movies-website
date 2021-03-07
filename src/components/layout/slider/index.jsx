@@ -12,7 +12,7 @@ export const Slider = () => {
 
                         <img className={styleSilder.imageSlider} src={sliderImage} />
                         <div className="col-lg-12">
-                            <h1 className={styleSilder.title}>Welcome.</h1>
+                             <h1 className={styleSilder.title}>Welcome.</h1> 
                         </div>
                     </div>
                     <div className="row">

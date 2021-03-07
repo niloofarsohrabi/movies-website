@@ -12,7 +12,7 @@ export const Footer = () => {
                     <div className="col-lg-4">
                 
                         <img className={styleFooter.logoImage} src={logo} />
-                        <button className={styleFooter.btnFooter}>JOIN THE COMMUNITY</button>
+                         <button className={styleFooter.btnFooter}>JOIN THE COMMUNITY</button> 
 
                     </div>
                     {

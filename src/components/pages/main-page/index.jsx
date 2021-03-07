@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Slider } from '../../layout/slider'
 import ShowShortInfoOfPopularSlider from '../../../showInfoOfFetchData/showShortInfoOfPopularSlider'
 import styleMainPage from './styleMainPage.module.scss'
@@ -6,12 +6,13 @@ import ShowShortInfoOfFreeWatchSlider from '../../../showInfoOfFetchData/showSho
 import { Banner } from '../../banner'
 
 
+
 export const MainPage = () => {
-   
+
     return (
 
         <>
-          
+
             <Slider />
             {/* ------------------------------------------------------- header and slider */}
             <div className={styleMainPage.titlePopular}>
@@ -19,17 +20,17 @@ export const MainPage = () => {
                 <div className={styleMainPage.line}></div>
                 <ShowShortInfoOfPopularSlider />
             </div>
-            <div className={styleMainPage.titleFreeWatch}>
+            {/* <div className={styleMainPage.titleFreeWatch}>
                 <h4>Free To Watch</h4>
                 <div className={styleMainPage.line}></div>
                 <ShowShortInfoOfFreeWatchSlider />
-            </div>
+            </div> */}
             <div>
-                <Banner/>
+                <Banner />
             </div>
 
             {/* ---------------------------------------------------------fetch data */}
-           
+
         </>
     )
 }

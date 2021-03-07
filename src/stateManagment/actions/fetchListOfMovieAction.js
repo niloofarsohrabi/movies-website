@@ -25,7 +25,7 @@ export const errorFetchData = () => {
 export const fetchMovieAction = async (dispatch) => {
     try {
         dispatch(startFetchListOfMovieAction());
-        const urlGetAllMovie = await fetch(`${mainUrl.FETCH_URL}/movies?page=1`);
+        const urlGetAllMovie = await fetch(`${mainUrl.FETCH_URL}/movie/popular?api_key=${mainUrl.API_KEY}&language=en-US&page=1`);
         let result = await urlGetAllMovie.json();
         return dispatch(finishFetchListOfMovieAction(result));
     } catch (e) {

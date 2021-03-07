@@ -1,25 +1,29 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchMovieAction } from '../../stateManagment/actions/fetchListOfMovieAction'
+import { fetchFullUrlOfImageAction } from '../../stateManagment/actions/fetchFullUrlImageAction'
 import { Loading } from '../../components/layout/loading'
 import '../globalStyle.scss'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
 import { Link } from 'react-router-dom'
+import { ScoreComponent } from '../../components/score'
 
 const ShowShortInfoOfPopularSlider = () => {
 
-    //const isLoadingState = useSelector(state => state.listOfMovieState.isLoading);
-    const resiveDataState = useSelector(state => state.listOfMovieState.getAllMovie.data);
+    const receivedFullDataState = useSelector(state => state.listOfMovieState.getAllMovie.results);
+    const receivedFullUrlImagesState = useSelector(state => state.fullUrlImageState.getFullUrlOfImages.images)
+
     const dispatch = useDispatch();
     useEffect(async () => {
-        await dispatch(await fetchMovieAction(dispatch, 1));
+        await dispatch(await fetchMovieAction(dispatch));
+    }, []);
+
+    useEffect(async () => {
+        await dispatch(await fetchFullUrlOfImageAction(dispatch));
     }, [])
     //------------------------------------------------------
-    const [mouseOverOnImage, setMouseOverOnImage] = useState();
-    const handleMouseOverOnImage = (id) => {
-        setMouseOverOnImage(id);
-    }
+
     //------------------------------------------------------
     const responsive = {
         desktop: {
@@ -38,18 +42,40 @@ const ShowShortInfoOfPopularSlider = () => {
             paritialVisibilityGutter: 30
         }
     };
-    return (
+    const [statebase, setstatebase] = useState();
+    const [statesize, setstatesize] = useState()
+    useEffect(async () => {
+        const res = await fetch("https://api.themoviedb.org/3/configuration?api_key=970fbda2d55676cabae8b2cebf1f04d0");
+        const khoroji = await res.json();
+        console.log(khoroji);
+        //setstate(khoroji.images.backdrop_sizes)
+        //setstatebase(khoroji.images.base_url);
+        //setstatesize(khoroji.images.logo_sizes);
+        console.log("images")
+        console.log(khoroji.images.base_url);
+        console.log(khoroji.images.backdrop_sizes)
 
+
+    }, [])
+
+    const [mouseOverOnImage, setMouseOverOnImage] = useState();
+    const handleMouseOverOnImage = (id) => {
+        setMouseOverOnImage(id);
+        console.log(id)
+    }
+    return (
+        // src={item.backdrop_path}
+        // itemClass="image-item"
         <Carousel
             ssr
             partialVisbile
             responsive={responsive} itemClass="image-item">
             {
-                resiveDataState ?
-                    resiveDataState.map((item) => {
+                receivedFullDataState ?
+                    receivedFullDataState.map((item, index) => {
                         return (
 
-                            <div key={item.id}>
+                            <div key={index}>
                                 {
                                     mouseOverOnImage == item.id ?
                                         <div className="box" >
@@ -67,23 +93,18 @@ const ShowShortInfoOfPopularSlider = () => {
                                                     </svg>
                                                 </div>
                                             </Link>
-                                        </div> : null
-
+                                        </div>
+                                        :
+                                        null
                                 }
-                                {/* ----------------------------------------------------- */}
 
-                                <img className="poster" src={item.poster}
+                                {/* ----------------------------- */}
+                                <img className="poster"
                                     onMouseEnter={() => handleMouseOverOnImage(item.id)}
-                                    onMouseLeave={() => handleMouseOverOnImage(item.id)} />
-                                <div className="titleMovie">{item.title}</div>
-                                <div className="yearOfMovie">
-                                    Production Year {item.year}
-                                </div>
-                                <div className="countryOfMovie">
-                                    {item.country}
-                                </div>
-
-
+                                    onMouseLeave={() => handleMouseOverOnImage(item.id)}
+                                    src={`${receivedFullUrlImagesState.base_url}${receivedFullUrlImagesState.poster_sizes[2]}${item.poster_path}`} />
+                                <div className="titleMovie">{item.original_title}</div>
+                                <div className="yearOfMovie">{item.release_date}</div>
                             </div>
 
                         )

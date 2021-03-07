@@ -26,6 +26,7 @@ export const fetchFreeMovieAction = async (dispatch) => {
     try {
         dispatch(startFetchListOfFreeMovieAction());
         const urlGetAllMovie = await fetch(`${mainUrl.FETCH_URL}/movies?page=2`);
+  
         let result = await urlGetAllMovie.json();
         return dispatch(finishFetchListOfFreeMovieAction(result));
     } catch (e) {
