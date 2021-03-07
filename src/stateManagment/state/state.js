@@ -1,6 +1,5 @@
 const intialState = {
     getAllMovie: {},
-    getFreeWatchMovie: {},
     getDetailOfMovie: {},
     getFullUrlOfImages:{},
     isLoading: false,
