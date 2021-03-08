@@ -3,6 +3,7 @@ import { Slider } from '../../layout/slider'
 import ShowShortInfoOfPopularSlider from '../../../showInfoOfFetchData/showShortInfoOfPopularSlider'
 import styleMainPage from './styleMainPage.module.scss'
 import { Banner } from '../../banner'
+import { Loading } from '../../layout/loading'
 
 
 
@@ -19,7 +20,7 @@ export const MainPage = () => {
                 <div className={styleMainPage.line}></div>
                 <ShowShortInfoOfPopularSlider />
             </div>
-   
+             
             <div>
                 <Banner />
             </div>

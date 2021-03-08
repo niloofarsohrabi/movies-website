@@ -25,13 +25,11 @@ export const errorFetchData = () => {
 export const fetchDetailMovieAction = async (dispatch, id) => {
     try {
         dispatch(startFetchDetailOfMovieAction());
-        const urlGetAllMovie = await fetch(`${mainUrl.FETCH_URL}/movies/${id}`);
+        const urlGetAllMovie = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=970fbda2d55676cabae8b2cebf1f04d0&language=en-US`);
         let result = await urlGetAllMovie.json();
         return dispatch(finishFetchDetailOfMovieAction(result));
     }
     catch(e){
         dispatch(errorFetchData());
     }
-        
-    
 }

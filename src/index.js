@@ -5,12 +5,14 @@ import { Provider } from 'react-redux'
 import { store } from './stateManagment/store/store'
 import reportWebVitals from './reportWebVitals';
 import './index.css';
+import { BasicConfig } from './basicConfig';
 
 
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
+      <BasicConfig/>
       <RouterHandler />
     </Provider>
   </React.StrictMode>,

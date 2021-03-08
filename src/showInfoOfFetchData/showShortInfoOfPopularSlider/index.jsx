@@ -19,11 +19,23 @@ const ShowShortInfoOfPopularSlider = () => {
         await dispatch(await fetchMovieAction(dispatch));
     }, []);
 
-    useEffect(async () => {
-        await dispatch(await fetchFullUrlOfImageAction(dispatch));
-    }, [])
-    //------------------------------------------------------
 
+    //------------------------------------------------------
+    const [statebase, setstatebase] = useState();
+    const [statesize, setstatesize] = useState()
+    // useEffect(async () => {
+    //     const res = await fetch("https://api.themoviedb.org/3/configuration?api_key=970fbda2d55676cabae8b2cebf1f04d0");
+    //     const khoroji = await res.json();
+    //     console.log(khoroji);
+    //     //setstate(khoroji.images.backdrop_sizes)
+    //     //setstatebase(khoroji.images.base_url);
+    //     //setstatesize(khoroji.images.logo_sizes);
+    //     //console.log("images")
+    //    // console.log(khoroji.images.base_url);
+    //    // console.log(khoroji.images.backdrop_sizes)
+
+
+    // }, [])
     //------------------------------------------------------
     const responsive = {
         desktop: {
@@ -42,26 +54,11 @@ const ShowShortInfoOfPopularSlider = () => {
             paritialVisibilityGutter: 30
         }
     };
-    const [statebase, setstatebase] = useState();
-    const [statesize, setstatesize] = useState()
-    useEffect(async () => {
-        const res = await fetch("https://api.themoviedb.org/3/configuration?api_key=970fbda2d55676cabae8b2cebf1f04d0");
-        const khoroji = await res.json();
-        console.log(khoroji);
-        //setstate(khoroji.images.backdrop_sizes)
-        //setstatebase(khoroji.images.base_url);
-        //setstatesize(khoroji.images.logo_sizes);
-        console.log("images")
-        console.log(khoroji.images.base_url);
-        console.log(khoroji.images.backdrop_sizes)
-
-
-    }, [])
+  
 
     const [mouseOverOnImage, setMouseOverOnImage] = useState();
     const handleMouseOverOnImage = (id) => {
         setMouseOverOnImage(id);
-        console.log(id)
     }
     return (
         // src={item.backdrop_path}
@@ -103,12 +100,12 @@ const ShowShortInfoOfPopularSlider = () => {
                                     onMouseEnter={() => handleMouseOverOnImage(item.id)}
                                     onMouseLeave={() => handleMouseOverOnImage(item.id)}
                                     src={`${receivedFullUrlImagesState.base_url}${receivedFullUrlImagesState.poster_sizes[2]}${item.poster_path}`} />
-                                <div className="titleMovie">{item.original_title}</div>
+                                <div className="titleMovie">{item.title}</div>
                                 <div className="yearOfMovie">{item.release_date}</div>
                             </div>
 
                         )
-                    }) : <Loading />
+                    }) :<Loading />
             }
 
         </Carousel>

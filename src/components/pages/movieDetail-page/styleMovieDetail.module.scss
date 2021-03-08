@@ -1,52 +1,72 @@
 @import '../../../assets/css/_variable/variable';
 
-.colorOfBackgroundBanner{
-  background-color: #e1e1e1;
+.backgroundBanner{
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+ //z-index:100
 }
+.bgDark{
+  background:linear-gradient(to right, rgb(104, 105, 107) 150px, rgba(8.24%, 8.63%, 9.02%, 0.84) 100%);
+  padding-bottom: 30px;
+}
+
 .poster{
   margin-left: 40px;
   
 }
 .poster img{
-  width: 270px;
-  height: 400px;
   border: 2px solid $light-blue;
   border-radius: 5px;
   margin-top:20px;
   box-shadow: 1px 1px 9px 0px $light-blue;
+  
 }
 .totalDesign{
-  margin-top: 50px;
+  margin-top: 100px;
   margin-bottom: 50px;
-  font-weight: 500;
+  font-weight: 400;
 }
 .title{
   font-weight: bold;
   font-size: 40px;
+  color: white;
 }
 .designDetail{
   display: flex;
 }
+.totalDesign{
+  color: white;
+}
 .totalDesign svg{
-  color:#004d90;
+  color:white;
   margin-right: 10px;
 }
-.released,.runtime,.country,.overview{
+.released,.runtime,.overview{
   padding-right: 40px;
   margin: 15px 0px;
-  font-size:18px;
+  font-size:17px;
 }
 .genres ul{
   list-style-type: none;
   display: inline-block;
   padding:0;
+  margin-top: 15px;
 }
 .genres ul li{
   padding-right: 10px;
-  font-size:18px
+  font-size:17px
 }
-.awards{
-  font-size: 18px;
+.overviewTitle,.userScore{
+  font-size: 22px;
+  font-weight: bold;
+}
+.tagline{
+  margin-bottom: 10px;
+  color: rgb(175, 175, 175);
+  font-style: italic;
+  font-size: 17px;
+  font-weight: bold;
 }
 .buttongroup{
   display: flex;
@@ -54,21 +74,59 @@
 .buttongroup svg{
   color: white;
 }
-.list,.favarite,.save,.star{
+.list,.favarite,.save,.star,.play{
   width: 60px;
   height: 60px;
   background-color: $main-color;
   border-radius: 50px;
   margin-right: 20px;
-  margin-top: 15px;
+  margin-top: 30px;
   position: relative;
   cursor: pointer;
 }
-.list svg ,.favarite svg ,.save svg,.star svg{
+.list svg ,.favarite svg ,.save svg,.star svg,.play svg{
   position: relative;
   top:15px;
   left:18px
 }
-.list:hover,.favarite:hover,.save:hover,.star:hover{
+.list:hover,.favarite:hover,.save:hover,.star:hover,.play:hover{
   background-color: $light-blue;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: $main-color;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 2px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: $main-color transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }

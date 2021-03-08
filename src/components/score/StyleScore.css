@@ -1,6 +1,17 @@
 .styles_scoreWrapper__2ELf- .styles_rangeSvg__1TDxQ{
-    width: 80px  !important;
-}
+    width: 70px !important;
+} 
 .styles_scoreWrapper__2ELf- .styles_separator__1X7r0,.styles_scoreWrapper__2ELf- .styles_maxValue__3RXTR{
     display: none;
+}
+.styles_wrapper__3KXDn{
+    position: relative;
+
+    margin: 10px 0px !important;
+    right: 59px;
+    top: 15px;
+}
+
+.styles_value__2Y4_G{
+    font-size: 30px !important;
 }
