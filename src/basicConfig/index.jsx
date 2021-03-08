@@ -7,6 +7,7 @@ export const BasicConfig = () => {
     useEffect(async () => {
         await dispatch(await fetchFullUrlOfImageAction(dispatch));
     }, [])
+   
     return (
         null
     )

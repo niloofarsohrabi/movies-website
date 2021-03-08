@@ -1,71 +1,32 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
-
-
+import { useSelector, useDispatch } from 'react-redux'
+import { Link, useParams } from 'react-router-dom'
+import { ScoreComponent } from '../../../../score/index'
+import { fetchKeywordOfMovieAction } from '../../../../../stateManagment/actions/fetchKeywordOfMovieAction'
 import styleBottomOfDetail from './styleBottomOfDetailOfMovie.module.scss'
-
-
+import { MovieTopCast } from '../movieTopCast'
 
 export const MovieDetailBottomPart = () => {
-
+    const { id } = useParams();
     const getDetailOfMovie = useSelector(state => state.detailOfMovieState.getDetailOfMovie);
+    const getKeyword = useSelector(state => state.keywordOfMovieState.getKeyWordOfMovie.keywords)
+    const dispatch = useDispatch()
+    useEffect(async () => {
+        await dispatch(await fetchKeywordOfMovieAction(dispatch, id))
 
-    const [nameOfActor, setNameOfActor] = useState([]);
-    const [cast, setCast] = useState([]);
-    useEffect(() => {
-        if (getDetailOfMovie.actors) {
-            const getActors = getDetailOfMovie.actors;
-            const result = getActors.split(",");
-            setNameOfActor(result)
-        }
-    }, [getDetailOfMovie])
+    }, [])
 
-    useEffect(() => {
-        if (getDetailOfMovie.writer) {
-            const getCast = getDetailOfMovie.writer;
-            const result = getCast.split(",");
-            setCast(result)
-        }
-
-    }, [getDetailOfMovie])
 
     return (
-
         <>
-            {/* <ScoreComponent NumberOfScore={getDetailOfMovie.metascore}/> */}
             <div className="container-fluid">
-          
                 <div className="row">
                     <div className="col-lg-9">
                         <div className={styleBottomOfDetail.totalOfAccount}>
-                            <div className={styleBottomOfDetail.title}>More Details</div>
-                            <div className={styleBottomOfDetail.starsTitle}>Stars</div>
-                            {
-                                nameOfActor.map((item) => {
+                                <div className={styleBottomOfDetail.titleCast}>Top Billed Cast</div>
+                                <MovieTopCast movieId={id} />
+                            
 
-                                    return (
-                                        <div className={styleBottomOfDetail.boxAccount}>
-
-                                            <div>{item}</div>
-                                        </div>
-                                    )
-                                })
-                            }
-
-                            <div className={styleBottomOfDetail.castTitle}>Cast</div>
-                            {
-                                cast.map((castItem) => {
-                                    return (
-                                        <div className={styleBottomOfDetail.boxAccount}>
-                                            <div>{castItem}</div>
-                                        </div>
-                                    )
-                                })
-                            }
-                            <hr/>
-                            <div className={styleBottomOfDetail.title}>Pictures From The Movie Sequence</div>
-                          
                         </div>
                     </div>
                     <div className="col-lg-3">
@@ -94,9 +55,51 @@ export const MovieDetailBottomPart = () => {
                                 </svg>
                             </div>
                         </div>
-                       
+                        <div className={styleBottomOfDetail.total}>
+                            <div className={styleBottomOfDetail.styleTitle}>User Score </div>
+                            <ScoreComponent NumberOfScore={(getDetailOfMovie.vote_average) * 10} />
+                        </div>
+                        <div className={styleBottomOfDetail.total}>
+                            <div className={styleBottomOfDetail.styleTitle}>Original Title</div>
+                            <div>{getDetailOfMovie.original_title}</div>
+                        </div>
 
+                        <div className={styleBottomOfDetail.total}>
+                            <div className={styleBottomOfDetail.styleTitle}>Status</div>
+                            <div>{getDetailOfMovie.status}</div>
+                        </div>
 
+                        <div className={styleBottomOfDetail.total}>
+                            <div className={styleBottomOfDetail.styleTitle}>Original Language</div>
+                            <div>{getDetailOfMovie.original_language}</div>
+                        </div>
+
+                        <div className={styleBottomOfDetail.total}>
+                            <div className={styleBottomOfDetail.styleTitle}>Budget</div>
+                            <div>${getDetailOfMovie.budget}</div>
+                        </div>
+
+                        <div className={styleBottomOfDetail.total}>
+                            <div className={styleBottomOfDetail.styleTitle}>revenue</div>
+                            <div>{getDetailOfMovie.revenue}</div>
+                        </div>
+                        <div className={styleBottomOfDetail.total}>
+                            <div className={styleBottomOfDetail.styleTitle}>Keywords</div>
+                            <div className={styleBottomOfDetail.keywordItem}>
+                                {
+                                    getKeyword &&
+                                    getKeyword.map((item, index) => {
+                                        return (
+                                            <div key={index} >
+
+                                                {item.name}
+
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

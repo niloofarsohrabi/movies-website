@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchMovieAction } from '../../stateManagment/actions/fetchListOfMovieAction'
-import { fetchFullUrlOfImageAction } from '../../stateManagment/actions/fetchFullUrlImageAction'
 import { Loading } from '../../components/layout/loading'
 import '../globalStyle.scss'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
 import { Link } from 'react-router-dom'
-import { ScoreComponent } from '../../components/score'
+
 
 const ShowShortInfoOfPopularSlider = () => {
 
