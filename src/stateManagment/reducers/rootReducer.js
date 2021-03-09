@@ -7,6 +7,7 @@ import { fetchKeywordOfMovieReducer } from './fetchKeywordOfMovieReducer';
 import { fetchTopCastOfMovieReducer } from './fetchTopCastOfMovieReducer';
 import { fetchReviewsReducer } from './fetchReviewsReducer';
 import { fetchImageOMovieReducer } from './fetchImageOfMovieReducer';
+import { fetchRecommandMovieReducer } from './fetchRecommandMovieReducer';
 
 const rootReducer = combineReducers({
     listOfMovieState: fetchListOfMovieReducer,
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
     keywordOfMovieState:fetchKeywordOfMovieReducer,
     topCastOMovieState:fetchTopCastOfMovieReducer,
     reviewsState:fetchReviewsReducer,
-    getImageState:fetchImageOMovieReducer
+    getImageState:fetchImageOMovieReducer,
+    getRecommandState:fetchRecommandMovieReducer
 });
 export default rootReducer;

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchImageOMovieAction } from '../../../../../stateManagment/actions/fetchImageOfMovieAction'
+import {Loading} from '../../../../layout/loading'
 import styleMedia from './styleMedia.module.scss'
 
 export const MovieMedia = ({ movieId, onTabClick }) => {
@@ -24,7 +25,7 @@ export const MovieMedia = ({ movieId, onTabClick }) => {
         return (
             <div className={styleMedia.totalPoster}>
                 {
-                    getImage && getImage.posters.map((item, index) => {
+                    getImage.posters && getImage.posters.map((item, index) => {
                         return (
                             <div key={index}>
                                 <img src={`${receivedFullUrlImagesState.base_url}${receivedFullUrlImagesState.poster_sizes[2]}${item.file_path}`} />
@@ -40,7 +41,7 @@ export const MovieMedia = ({ movieId, onTabClick }) => {
         return (
             <div className={styleMedia.totalbackdrops}>
                 {
-                    getImage && getImage.backdrops.map((item, index) => {
+                    getImage.backdrops && getImage.backdrops.map((item, index) => {
                         return (
                             <div key={index}>                         
                                 <img src={`${receivedFullUrlImagesState.base_url}${receivedFullUrlImagesState.poster_sizes[4]}${item.file_path}`} />
@@ -52,19 +53,7 @@ export const MovieMedia = ({ movieId, onTabClick }) => {
         )
     }
     return (
-        <div className={styleMedia.totalPoster}>
-                {
-                    getImage.posters && getImage.posters.map((item, index) => {
-                       
-                        return (
-                            <div key={index}>
-                                <img src={`${receivedFullUrlImagesState.base_url}${receivedFullUrlImagesState.poster_sizes[2]}${item.file_path}`} />
-                            </div>
-                        )
-                    })
-                }
-
-            </div>
+        <Loading/>
     )
 
 

@@ -6,6 +6,7 @@ const intialState = {
     getTopCastOfMovie:{},
     getReviews:{},
     getImage:{},
+    getRecommand:{},
     isLoading: false,
     errorFetchData: false,
     errorFetchData_Msg: ""

@@ -18,5 +18,7 @@ export const actionType = {
 
     GET_IMAGE:"GET_IMAGE",
 
+    UPDATE_RECOMMAND:"UPDATE_RECOMMAND",
+
     ERROR_FETCH_DATA:"ERROR_FETCH_DATA"
 }

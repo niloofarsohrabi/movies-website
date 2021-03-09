@@ -7,10 +7,11 @@ import styleBottomOfDetail from './styleBottomOfDetailOfMovie.module.scss'
 import { MovieTopCast } from '../movieTopCast'
 import { MovieMedia } from '../movieMedia'
 import { Reviews } from '../reviews'
+import { Recommendations } from '../recommendations'
 
 export const MovieDetailBottomPart = () => {
 
-    const [handleClickOnTab, setHandleClickOnTab] = useState();
+    const [currentTab, setCurrentTab] = useState("POSTER");
 
     const { id } = useParams();
     const getDetailOfMovie = useSelector(state => state.detailOfMovieState.getDetailOfMovie);
@@ -20,23 +21,10 @@ export const MovieDetailBottomPart = () => {
         await dispatch(await fetchKeywordOfMovieAction(dispatch, id))
 
     }, [])
-    const [changeStyleByClickOnTab_poster, setChangeStyleByClickOnTab_poster] = useState(true);
-    const [changeStyleByClickOnTab_backdrop, setChangeStyleByClickOnTab_backdrop] = useState(false);
+  
 
     const handleOnTabClick = (whichOneClick) => {
-        setHandleClickOnTab(whichOneClick);
-        if (whichOneClick === "POSTER") {
-            setChangeStyleByClickOnTab_poster(prevState => !prevState);
-            setChangeStyleByClickOnTab_backdrop(prevState => !prevState);
-        
-        } else if (whichOneClick === "BACKDROPS") {
-            setChangeStyleByClickOnTab_backdrop(prevState => !prevState);
-            setChangeStyleByClickOnTab_poster(prevState => !prevState)
-        } else {
-            return null;
-        }
-
-
+        setCurrentTab(whichOneClick);
     }
 
 
@@ -60,17 +48,18 @@ export const MovieDetailBottomPart = () => {
                                 <div className={styleBottomOfDetail.titleCast}>Media</div>
 
                                 <div className={styleBottomOfDetail.poster}
-                                    style={changeStyleByClickOnTab_poster ? { borderBottom: "5px solid black" } : null}
+                                    style={currentTab==="POSTER" ? { borderBottom: "5px solid black" } : null}
                                     onClick={() => handleOnTabClick("POSTER")}>Posters</div>
 
                                 <div className={styleBottomOfDetail.backdrops}
-                                    style={changeStyleByClickOnTab_backdrop ? { borderBottom: "5px solid black" } : null}
+                                    style={currentTab==="BACKDROPS" ? { borderBottom: "5px solid black" } : null}
                                     onClick={() => handleOnTabClick("BACKDROPS")}>Backdrops</div>
                             </div>
 
-                            <MovieMedia movieId={id}
-                                onTabClick={handleClickOnTab} />
-
+                            <MovieMedia movieId={id} onTabClick={currentTab} />
+                            <hr/>
+                            <div className={styleBottomOfDetail.recommend}>Recommendations</div>
+                            <Recommendations movieId={id}/>
                         </div>
                     </div>
                     <div className="col-lg-3">

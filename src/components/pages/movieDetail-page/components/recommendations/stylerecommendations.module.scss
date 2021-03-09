@@ -1,0 +1,40 @@
+@import '../../../../../assets/css/_variable/variable';
+.totalRecommand{
+    display: flex;
+    overflow-x: scroll;
+    margin-top: 20px;
+}
+.totalRecommand:hover{
+    cursor: pointer;
+}
+
+.imgRecommand img{
+    margin-right: 20px;
+    border-radius: 5px;
+    border: 2px solid $light-blue;
+    box-shadow: 1px 1px 9px 0px $light-blue;
+}
+.titleRecommand{
+    margin-top:10px;
+    margin-bottom: 15px;
+    font-size:16px;
+    font-weight: 500;
+}
+.noimg{
+    border: 1px solid black;
+    width:300px;
+    height: 173px;
+    margin-right: 20px;
+    border: 2px solid $light-blue;
+    box-shadow: 1px 1px 9px 0px $light-blue;
+    background-color: #d1d1d1;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+}
+.noimg svg{
+    color: #979797;
+
+}
+
+  
