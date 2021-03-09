@@ -3,6 +3,7 @@
     box-shadow: 2px 2px 11px 1px #d8d8d8;
     margin: 20px 10px;
     border-radius: 5px;
+    width: 154px;
 }
 .totalTopCast{
     display: flex;
@@ -16,9 +17,20 @@
     margin-right: 10px;
 }
 .topCastCharacter{
-    font-size:15px
+    font-size:15px;
+    padding-bottom: 15px;
+    
 }
-.box div{
+.topCastName,.topCastCharacter{
     margin-left: 10px;
     margin-top: 5px;
+    
+}
+.profileLogo {
+    width: 154px;
+    height: 231px;
+    background-color: #d1d1d1;
+}
+.profileLogo svg{
+    color:#979797
 }

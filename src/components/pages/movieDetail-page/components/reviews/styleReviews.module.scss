@@ -1,0 +1,49 @@
+.boxOfReview{
+    border: 1px solid #d8d8d8;
+    box-shadow: 2px 2px 11px 1px #d8d8d8;
+    border-radius: 5px;
+    display: flex;
+    margin-top:20px;
+    padding:0px 20px;
+    position: relative;
+}
+.insideOfBox{
+    flex-direction: column;
+    margin-left: 20px;
+}
+.avatar{
+    border-radius: 50px;
+    margin: 20px 15px;
+    height: 100px ;
+}
+.title{
+    margin-top:20px;
+    font-weight: bold;
+    font-size:18px;
+}
+.readMore:hover{
+    cursor: pointer;
+    color: gray;
+}
+.rating{
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    display: flex;
+    width: 10%;
+    justify-content: center;
+    padding: 2px 0px;
+    position: absolute;
+    top: 20px;
+    left: 400px;
+    
+}
+.rating svg{
+    margin-top:5px;
+    
+}
+.ratingNumber{
+    margin-left: 5px;
+    
+}

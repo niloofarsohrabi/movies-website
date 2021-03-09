@@ -4,6 +4,8 @@ const intialState = {
     getFullUrlOfImages:{},
     getKeyWordOfMovie:{},
     getTopCastOfMovie:{},
+    getReviews:{},
+    getImage:{},
     isLoading: false,
     errorFetchData: false,
     errorFetchData_Msg: ""

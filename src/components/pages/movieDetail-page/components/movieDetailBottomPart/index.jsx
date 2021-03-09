@@ -5,8 +5,13 @@ import { ScoreComponent } from '../../../../score/index'
 import { fetchKeywordOfMovieAction } from '../../../../../stateManagment/actions/fetchKeywordOfMovieAction'
 import styleBottomOfDetail from './styleBottomOfDetailOfMovie.module.scss'
 import { MovieTopCast } from '../movieTopCast'
+import { MovieMedia } from '../movieMedia'
+import { Reviews } from '../reviews'
 
 export const MovieDetailBottomPart = () => {
+
+    const [handleClickOnTab, setHandleClickOnTab] = useState();
+
     const { id } = useParams();
     const getDetailOfMovie = useSelector(state => state.detailOfMovieState.getDetailOfMovie);
     const getKeyword = useSelector(state => state.keywordOfMovieState.getKeyWordOfMovie.keywords)
@@ -15,6 +20,24 @@ export const MovieDetailBottomPart = () => {
         await dispatch(await fetchKeywordOfMovieAction(dispatch, id))
 
     }, [])
+    const [changeStyleByClickOnTab_poster, setChangeStyleByClickOnTab_poster] = useState(true);
+    const [changeStyleByClickOnTab_backdrop, setChangeStyleByClickOnTab_backdrop] = useState(false);
+
+    const handleOnTabClick = (whichOneClick) => {
+        setHandleClickOnTab(whichOneClick);
+        if (whichOneClick === "POSTER") {
+            setChangeStyleByClickOnTab_poster(prevState => !prevState);
+            setChangeStyleByClickOnTab_backdrop(prevState => !prevState);
+        
+        } else if (whichOneClick === "BACKDROPS") {
+            setChangeStyleByClickOnTab_backdrop(prevState => !prevState);
+            setChangeStyleByClickOnTab_poster(prevState => !prevState)
+        } else {
+            return null;
+        }
+
+
+    }
 
 
     return (
@@ -23,9 +46,30 @@ export const MovieDetailBottomPart = () => {
                 <div className="row">
                     <div className="col-lg-9">
                         <div className={styleBottomOfDetail.totalOfAccount}>
-                                <div className={styleBottomOfDetail.titleCast}>Top Billed Cast</div>
-                                <MovieTopCast movieId={id} />
-                            
+                            <div className={styleBottomOfDetail.titleCast}>Top Billed Cast</div>
+                            <MovieTopCast movieId={id} />
+                            <hr />
+                            <div className={styleBottomOfDetail.socialTitle}>
+                                <div className={styleBottomOfDetail.titleCast}>Social</div>
+                                <div className={styleBottomOfDetail.reviewTitle}>Reviews</div>
+                            </div>
+                            <Reviews movieId={id} />
+
+                            <hr />
+                            <div className={styleBottomOfDetail.movieTitle}>
+                                <div className={styleBottomOfDetail.titleCast}>Media</div>
+
+                                <div className={styleBottomOfDetail.poster}
+                                    style={changeStyleByClickOnTab_poster ? { borderBottom: "5px solid black" } : null}
+                                    onClick={() => handleOnTabClick("POSTER")}>Posters</div>
+
+                                <div className={styleBottomOfDetail.backdrops}
+                                    style={changeStyleByClickOnTab_backdrop ? { borderBottom: "5px solid black" } : null}
+                                    onClick={() => handleOnTabClick("BACKDROPS")}>Backdrops</div>
+                            </div>
+
+                            <MovieMedia movieId={id}
+                                onTabClick={handleClickOnTab} />
 
                         </div>
                     </div>

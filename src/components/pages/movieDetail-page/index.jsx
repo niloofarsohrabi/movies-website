@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 import { fetchDetailMovieAction } from "../../../stateManagment/actions/fetchDetailOfMovieAction";
 import { MovieDetailBottomPart } from './components/movieDetailBottomPart';
 import styleMovie from './styleMovieDetail.module.scss'
-
+import { Loading } from '../../layout/loading'
 
 export const MovieDetailPage = () => {
     const { id } = useParams();
@@ -18,9 +18,12 @@ export const MovieDetailPage = () => {
 
     }, []);
 
-
+    if (!receivedFullUrlImagesState)
+        return <Loading />;
     return (
+
         <>
+       
             <div className={styleMovie.backgroundBanner}
                 style={{ backgroundImage: `url(${receivedFullUrlImagesState.base_url}${receivedFullUrlImagesState.backdrop_sizes[2]}${detailOfMovieState.backdrop_path})` }}>
                 <div className={styleMovie.bgDark}>
@@ -121,8 +124,12 @@ export const MovieDetailPage = () => {
                     </div>
                 </div>
             </div>
+    
+  <MovieDetailBottomPart />
+   
+          
+             
 
-            <MovieDetailBottomPart />
         </>
     )
 }

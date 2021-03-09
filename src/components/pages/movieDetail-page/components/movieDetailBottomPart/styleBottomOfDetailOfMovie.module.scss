@@ -56,5 +56,36 @@
 .titleCast{
     font-weight: bold;
     font-size: 25px;
-    margin-top:10px
+    margin-top:20px
+}
+.socialTitle,.movieTitle{
+    display: flex;
+    margin-right: 20px;
+}
+.reviewTitle,.poster,.backdrops{
+    font-weight: bold;
+    font-size: 18px;
+    margin-top:20px
+}
+.socialTitle .reviewTitle,.poster,.backdrops{
+    margin-left: 20px;
+    margin-top: 30px;
+}
+.poster:hover,.backdrops:hover{
+    cursor: pointer;
+    
+}
+.poster,.backdrops{
+   // border-bottom: 5px solid black;
+    
+}
+.testt{
+    color: red;
+}
+.testtt{
+    color: greenyellow;
+}
+
+.nocolor{
+    color: black;
 }
