@@ -1,0 +1,40 @@
+@import '../../../assets/css/_variable/variable';
+.total{
+    display: flex; 
+    box-shadow: 2px 2px 11px 1px $light-blue;
+    margin:30px 30px;
+    border-radius: 5px;
+    
+}
+.insideBox{
+    flex-direction: column;
+    margin: 10px 10px;
+}
+.total img{    
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    height: auto;
+}
+.title{
+    font-weight: bold;
+    font-size: 18px;
+}
+.date{
+    color: gray;
+}
+.overview{
+    margin-top:15px;
+    font-size:15px;
+    height: auto;
+}
+.noImg{
+    width: 92px;
+    height: auto;
+    background-color: #d1d1d1;
+    display: flex;
+    justify-content: center;
+}
+.noImg svg{
+    color:#979797;
+   
+}

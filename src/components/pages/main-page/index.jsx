@@ -1,5 +1,5 @@
 import React from 'react'
-import { Slider } from '../../layout/slider'
+import  {Slider}  from '../../layout/slider'
 import ShowShortInfoOfPopularSlider from '../../../showInfoOfFetchData/showShortInfoOfPopularSlider'
 import styleMainPage from './styleMainPage.module.scss'
 import { Banner } from '../../banner'

@@ -15,7 +15,7 @@ export const Recommendations = ({ movieId }) => {
     return (
         <div className={styleRecommand.totalRecommand}>
             {
-                getRecommand &&
+                getRecommand ?
                 getRecommand.map((item,index) => {
                     return (
                         <div key={index} className={styleRecommand.imgRecommand}>
@@ -34,7 +34,7 @@ export const Recommendations = ({ movieId }) => {
 
                         </div>
                     )
-                })
+                }):<div>No Recommandations To Show!</div>
             }
         </div>
     )

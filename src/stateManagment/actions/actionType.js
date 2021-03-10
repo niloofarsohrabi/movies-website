@@ -20,5 +20,7 @@ export const actionType = {
 
     UPDATE_RECOMMAND:"UPDATE_RECOMMAND",
 
+    GET_SEARCH:"GET_SEARCH",
+
     ERROR_FETCH_DATA:"ERROR_FETCH_DATA"
 }

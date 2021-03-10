@@ -14,11 +14,14 @@ export const MovieDetailPage = () => {
 
     const dispatch = useDispatch();
     useEffect(async () => {
-        await dispatch(await fetchDetailMovieAction(dispatch, id));
+            console.log('is fetching...')
+            await dispatch(await fetchDetailMovieAction(dispatch, id));
+        
 
     }, []);
 
-    if (!receivedFullUrlImagesState)
+    React.useEffect(() => {if(receivedFullUrlImagesState && detailOfMovieState) console.log('data fetched')} , [detailOfMovieState , receivedFullUrlImagesState])
+    if (!receivedFullUrlImagesState || !detailOfMovieState)
         return <Loading />;
     return (
 

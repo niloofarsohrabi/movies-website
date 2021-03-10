@@ -7,6 +7,7 @@ const intialState = {
     getReviews:{},
     getImage:{},
     getRecommand:{},
+    search:{},
     isLoading: false,
     errorFetchData: false,
     errorFetchData_Msg: ""
