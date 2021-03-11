@@ -1,23 +1,30 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
 import { fetchSearchOfMovieAction } from '../../../stateManagment/actions/fetchSearchOfMovieAction'
-import {Loading} from '../../layout/loading'
+import { Loading } from '../../layout/loading'
 import styleSearch from './styleSearch.module.scss'
 
 export const Search = () => {
 
     const { name } = useParams();
+
     const getSearhOfMovie = useSelector(state => state.getSearchState.search.results)
     const receivedFullUrlImagesState = useSelector(state => state.fullUrlImageState.getFullUrlOfImages.images)
 
+ 
+    useEffect(async () => {
+        //console.log("name");
+        await dispatch(await fetchSearchOfMovieAction(dispatch, name));
+    }, [name])
 
     const dispatch = useDispatch();
     useEffect(async () => {
         await dispatch(await fetchSearchOfMovieAction(dispatch, name));
     }, []);
+
     if (!getSearhOfMovie) {
-        <Loading/>
+        <Loading />
     }
     return (
         <>
