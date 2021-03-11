@@ -1,7 +1,7 @@
 const pathes = {
     INDEX: "/",
     MOVIE_DETAIL: "/movie/:id",
-    SEARCH:"/search/:name",
+    SEARCH:"/search",
     FORBIDDEN:"/401",
     NOT_FOUND:"*"
 };

@@ -14,12 +14,12 @@ export const MovieDetailPage = () => {
   const receivedFullUrlImagesState = useSelector(
     (state) => state.fullUrlImageState.getFullUrlOfImages.images
   );
-  const [favarite, setFavarite] = useState();
+  
   const [isInFavorite, setIsInFavorite] = useState(false);
   const [favoriteList, setFavoriteList] = useState();
 
   const dispatch = useDispatch();
-  React.useEffect(() => {
+  useEffect(() => {
     if (favoriteList) {
       localStorage.setItem("FavariteLocal", JSON.stringify(favoriteList));
       if (checkIsInFavorites(id)) {
@@ -34,10 +34,12 @@ export const MovieDetailPage = () => {
       setFavoriteList([]);
     }
   }, []);
+
   useEffect(async () => {
     await dispatch(await fetchDetailMovieAction(dispatch, id));
   }, []);
 
+  
   const checkIsInFavorites = (id) => {
     if (
       favoriteList.filter((favId) => favId.toString() === id.toString())
@@ -46,10 +48,10 @@ export const MovieDetailPage = () => {
       return false;
     return true;
   };
+
+
   const handleAddFav = (id) => {
-    const queryString = "?q=wonder";
-    const key = queryString.slice(1).split("=")[0].trim();
-    const value = queryString.slice(1).split("=")[1].trim();
+    
     if (!checkIsInFavorites(id))
       setFavoriteList((prevState) => {
         return [...prevState, id];

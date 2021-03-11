@@ -13,7 +13,7 @@ export const Header = (props) => {
 
     const handleEnterPress = (event) => {
         if (event.key === 'Enter') {
-             history.push(`/search/${userInput}`)
+             history.push(`/search?q=${userInput}`)
 
         }
     }

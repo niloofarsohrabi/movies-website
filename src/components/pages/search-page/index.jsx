@@ -3,25 +3,28 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
 import { fetchSearchOfMovieAction } from '../../../stateManagment/actions/fetchSearchOfMovieAction'
 import { Loading } from '../../layout/loading'
+
 import styleSearch from './styleSearch.module.scss'
 
-export const Search = () => {
-
-    const { name } = useParams();
-
-    const getSearhOfMovie = useSelector(state => state.getSearchState.search.results)
-    const receivedFullUrlImagesState = useSelector(state => state.fullUrlImageState.getFullUrlOfImages.images)
-
- 
-    useEffect(async () => {
-        //console.log("name");
-        await dispatch(await fetchSearchOfMovieAction(dispatch, name));
-    }, [name])
+export const Search = ({ location }) => {
 
     const dispatch = useDispatch();
-    useEffect(async () => {
-        await dispatch(await fetchSearchOfMovieAction(dispatch, name));
-    }, []);
+
+    let queryString="";
+    useEffect(async() => {
+        const query=location.search;
+        const changeQuery=query.slice(1);
+        console.log(changeQuery)
+         const key=changeQuery.split("=")[0];
+         const value=changeQuery.split("=")[1];
+         queryString=value;
+         await dispatch(await fetchSearchOfMovieAction(dispatch, queryString))
+     }, [location])
+
+    //const { name } = useParams();
+    const getSearhOfMovie = useSelector(state => state.getSearchState.search.results);
+    const receivedFullUrlImagesState = useSelector(state => state.fullUrlImageState.getFullUrlOfImages.images)
+
 
     if (!getSearhOfMovie) {
         <Loading />
@@ -31,9 +34,9 @@ export const Search = () => {
 
             {
                 getSearhOfMovie &&
-                getSearhOfMovie.map((item) => {
+                getSearhOfMovie.map((item, index) => {
                     return (
-                        <div className={styleSearch.total}>
+                        <div key={index} className={styleSearch.total}>
 
                             {
                                 item.poster_path ?
@@ -63,6 +66,10 @@ export const Search = () => {
                         </div>
                     )
                 })
+
+              
+            
+                
             }
         </>
     )

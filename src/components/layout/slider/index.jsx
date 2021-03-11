@@ -10,12 +10,11 @@ export const Slider = () => {
 
     const handleEnterPress = (event) => {
         if (event.key === 'Enter') {
-             history.push(`/search/${userInput}`)
-        }
+            history.push(`/search?q=${userInput}`)        }
     }
 
     const handleClickOnSearchBtn = () => {
-        history.push(`/search/${userInput}`)
+        history.push(`/search?q=${userInput}`)
     }
     
     return (
