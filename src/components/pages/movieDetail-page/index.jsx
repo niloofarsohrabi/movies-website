@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchDetailMovieAction } from "../../../stateManagment/actions/fetchDetailOfMovieAction";
 import { MovieDetailBottomPart } from "./components/movieDetailBottomPart";
+import {Helmet} from "react-helmet";
 import styleMovie from "./styleMovieDetail.module.scss";
 import { Loading } from "../../layout/loading";
 
@@ -14,7 +15,7 @@ export const MovieDetailPage = () => {
   const receivedFullUrlImagesState = useSelector(
     (state) => state.fullUrlImageState.getFullUrlOfImages.images
   );
-  
+
   const [isInFavorite, setIsInFavorite] = useState(false);
   const [favoriteList, setFavoriteList] = useState();
 
@@ -39,7 +40,7 @@ export const MovieDetailPage = () => {
     await dispatch(await fetchDetailMovieAction(dispatch, id));
   }, []);
 
-  
+
   const checkIsInFavorites = (id) => {
     if (
       favoriteList.filter((favId) => favId.toString() === id.toString())
@@ -51,7 +52,7 @@ export const MovieDetailPage = () => {
 
 
   const handleAddFav = (id) => {
-    
+
     if (!checkIsInFavorites(id))
       setFavoriteList((prevState) => {
         return [...prevState, id];
@@ -68,6 +69,11 @@ export const MovieDetailPage = () => {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>{detailOfMovieState.title}</title>
+      </Helmet>
+       
       <div
         className={styleMovie.backgroundBanner}
         style={{
@@ -79,7 +85,7 @@ export const MovieDetailPage = () => {
             <div className="row">
               <div className="col-lg-4">
                 <div className={styleMovie.poster}>
-                  <img
+                  <img alt="posterImage"
                     src={`${receivedFullUrlImagesState.base_url}${receivedFullUrlImagesState.poster_sizes[3]}${detailOfMovieState.poster_path}`}
                   />
                 </div>
@@ -169,9 +175,8 @@ export const MovieDetailPage = () => {
                       <div className={styleMovie.tooltiptext}>Add To List</div>
                     </div>
                     <div
-                      className={`${styleMovie.favarite} ${
-                        styleMovie.tooltip
-                      } ${isInFavorite ? styleMovie.is_favorite : ""}`}
+                      className={`${styleMovie.favarite} ${styleMovie.tooltip
+                        } ${isInFavorite ? styleMovie.is_favorite : ""}`}
                       onClick={() => handleAddFav(detailOfMovieState.id)}
                     >
                       <svg

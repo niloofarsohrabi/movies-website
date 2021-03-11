@@ -20,22 +20,8 @@ const ShowShortInfoOfPopularSlider = () => {
 
 
     //------------------------------------------------------
-    const [statebase, setstatebase] = useState();
-    const [statesize, setstatesize] = useState()
-    // useEffect(async () => {
-    //     const res = await fetch("https://api.themoviedb.org/3/configuration?api_key=970fbda2d55676cabae8b2cebf1f04d0");
-    //     const khoroji = await res.json();
-    //     console.log(khoroji);
-    //     //setstate(khoroji.images.backdrop_sizes)
-    //     //setstatebase(khoroji.images.base_url);
-    //     //setstatesize(khoroji.images.logo_sizes);
-    //     //console.log("images")
-    //    // console.log(khoroji.images.base_url);
-    //    // console.log(khoroji.images.backdrop_sizes)
-
-
-    // }, [])
-    //------------------------------------------------------
+   
+   
     const responsive = {
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
@@ -60,8 +46,7 @@ const ShowShortInfoOfPopularSlider = () => {
         setMouseOverOnImage(id);
     }
     return (
-        // src={item.backdrop_path}
-        // itemClass="image-item"
+       
         <Carousel
             ssr
             partialVisbile
@@ -95,7 +80,7 @@ const ShowShortInfoOfPopularSlider = () => {
                                 }
 
                                 {/* ----------------------------- */}
-                                <img className="poster"
+                                <img className="poster" alt="popularImage"
                                     onMouseEnter={() => handleMouseOverOnImage(item.id)}
                                     onMouseLeave={() => handleMouseOverOnImage(item.id)}
                                     src={`${receivedFullUrlImagesState.base_url}${receivedFullUrlImagesState.poster_sizes[2]}${item.poster_path}`} />

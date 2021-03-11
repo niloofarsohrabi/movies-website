@@ -48,7 +48,7 @@ export const Reviews = ({ movieId }) => {
                 getReviews && getReviews[randomNumberOfArray] ?
                     <div className={styleReviews.boxOfReview}>
 
-                        <img className={styleReviews.avatar} src={imageName} />
+                        <img className={styleReviews.avatar} src={imageName} alt="proffileImage"/>
                         <div className={styleReviews.insideOfBox}>
                             <p className={styleReviews.title}>A Review By {getReviews[randomNumberOfArray].author}</p>
                             <p className={styleReviews.writter}>Written By {getReviews[randomNumberOfArray].author}</p>
@@ -67,10 +67,6 @@ export const Reviews = ({ movieId }) => {
                                 }
                             </div>
                         </div>
-
-
-
-
                     </div>
 
                     : noReviews

@@ -21,7 +21,7 @@ export const Recommendations = ({ movieId }) => {
                         <div key={index} className={styleRecommand.imgRecommand}>
                             {
                                 item.backdrop_path ?
-                                    <img src={`${receivedFullUrlImagesState.base_url}${receivedFullUrlImagesState.backdrop_sizes[0]}${item.backdrop_path}`} />
+                                    <img alt="recommandImage" src={`${receivedFullUrlImagesState.base_url}${receivedFullUrlImagesState.backdrop_sizes[0]}${item.backdrop_path}`} />
                                     :
                                     <div className={styleRecommand.noimg}>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="80" height="150" fill="currentColor" className="bi bi-image" viewBox="0 0 16 16">

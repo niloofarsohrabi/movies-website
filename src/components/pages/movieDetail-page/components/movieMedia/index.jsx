@@ -28,7 +28,7 @@ export const MovieMedia = ({ movieId, onTabClick }) => {
                     getImage.posters && getImage.posters.map((item, index) => {
                         return (
                             <div key={index}>
-                                <img src={`${receivedFullUrlImagesState.base_url}${receivedFullUrlImagesState.poster_sizes[2]}${item.file_path}`} />
+                                <img alt="media" src={`${receivedFullUrlImagesState.base_url}${receivedFullUrlImagesState.poster_sizes[2]}${item.file_path}`} />
                             </div>
                         )
                     })

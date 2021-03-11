@@ -4,11 +4,13 @@
     box-shadow: 2px 2px 11px 1px $light-blue;
     margin:30px 30px;
     border-radius: 5px;
-    
+  
 }
 .insideBox{
     flex-direction: column;
     margin: 10px 10px;
+    width: 100%;
+
 }
 .total img{    
     border-top-left-radius: 5px;
@@ -27,14 +29,18 @@
     font-size:15px;
     height: auto;
 }
-.noImg{
-    width: 92px;
-    height: auto;
+.noImg {
+    width:8%;
+    height: 130px;
     background-color: #d1d1d1;
     display: flex;
-    justify-content: center;
+     justify-content: center;
 }
 .noImg svg{
     color:#979797;
    
+}
+.noDataImg img{
+    display: block;
+    margin: 0 auto;
 }

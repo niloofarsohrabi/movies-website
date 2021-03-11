@@ -20,7 +20,7 @@ export const MovieTopCast = ({ movieId }) => {
                     return (
                         <div key={index} className={styleTopCast.box}>
                             {item.profile_path ?
-                                <img src={`${getfullImagePath.base_url}${getfullImagePath.logo_sizes[2]}${item.profile_path}`} />
+                                <img alt="topCastImage" src={`${getfullImagePath.base_url}${getfullImagePath.logo_sizes[2]}${item.profile_path}`} />
                                 :
                                 <div className={styleTopCast.profileLogo}>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="150" height="250" fill="currentColor" className="bi bi-person-fill" viewBox="0 0 16 16">

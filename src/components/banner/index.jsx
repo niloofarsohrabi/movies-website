@@ -5,7 +5,7 @@ export const Banner = () => {
     return (
         <div className={styleBanner.totalbanner}>
             <div className={styleBanner.bannerImg}>
-                <img src={bannerImage} />
+                <img src={bannerImage} alt="banner" />
             </div>
 
             <div className={styleBanner.bannerDetail}>

@@ -1,7 +1,6 @@
 import pathes from './pathes'
 import { MainPage } from '../../components/pages/main-page'
 import { MovieDetailPage } from '../../components/pages/movieDetail-page'
-import { ForbiddenPage } from '../../components/pages/forbidden-page'
 import { NotFoundPage } from '../../components/pages/notFound-page'
 import { Search } from '../../components/pages/search-page'
 
@@ -22,12 +21,6 @@ const routes = [
         name: "SEARCH",
         path: pathes.SEARCH,
         component: Search,
-        exact: true
-    },
-    {
-        name: "FORBIDDEN",
-        path: pathes.FORBIDDEN,
-        component: ForbiddenPage,
         exact: true
     },
     {

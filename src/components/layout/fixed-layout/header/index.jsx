@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import styleHeader from './styleHeader.module.scss'
 import { Link, useHistory } from 'react-router-dom'
-export const Header = (props) => {
+
+export const Header = ({children}) => {
 
     const [stateOnClickSerach, setStateOclickOnSearch] = useState(false);
     const handleClickOnSearch = () => {
@@ -37,7 +38,7 @@ export const Header = (props) => {
 
                         <div className="col-lg-7">
                             <div className={styleHeader.menu}>
-                                {props.children}
+                                {children}
                             </div>
                         </div>
                         <div className="col-lg-1">
