@@ -82,6 +82,9 @@
   position: relative;
   cursor: pointer;
 }
+.is_favorite{
+  background-color: $light-blue;
+}
 .list svg ,.favarite svg ,.save svg,.star svg,.play svg{
   position: relative;
   top:15px;
